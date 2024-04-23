@@ -1,4 +1,4 @@
-variable "bucket_name" {}
+variable "bucket_Trane" {}
 
 provider "aws" {
   region = "us-east-1"
@@ -6,7 +6,7 @@ provider "aws" {
 
 resource "aws_s3_bucket" "bucket" {
   bucket = var.bucket_name
-  acl    = "public"
+  acl    = "public-read"
 
   tags = {
     Name        = var.bucket_name
