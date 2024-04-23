@@ -1,15 +1,16 @@
-variable "bucket_trane" {}
+variable "bucket_name" {
+  type = string
+  description = "bucket name"
+}
 
 provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_s3_bucket" "bucket_trane" {
-  bucket = var.bucket_trane
-  acl    = "private"
-
-  tags = {
-    Name        = var.bucket_trane
-    Environment = "Devlopment"
+resource "aws_s3_bucket" "my_bucket" {
+  bucket  = "buckettrane"
+  tags    = {
+	Name          = "MyS3Bucket"
+	Environment    = "Dev"
   }
 }
