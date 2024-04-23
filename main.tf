@@ -6,7 +6,7 @@ provider "aws" {
 
 resource "aws_s3_bucket" "bucket_trane" {
   bucket = var.bucket_trane
-  acl    = "public-read"
+  acl    = "private"
 
   tags = {
     Name        = var.bucket_trane
